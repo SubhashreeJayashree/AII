@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleLang - The Simplest Language Ever</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Marquee -->
+        <header>
+            <marquee behavior="scroll" direction="left" class="marquee-header">
+                <span class="marquee-text">🌟 SimpleLang - Easy but Powerful! Arrays, Loops, Functions & Data Storage! 🌟</span>
+            </marquee>
+            <div class="header-content">
+                <h1>SimpleLang</h1>
+                <p class="subtitle">Easy Syntax, Powerful Features - Like Other Languages But Simpler!</p>
+            </div>
+        </header>
+
+        <!-- AI Mode Toggle -->
+        <div class="ai-controls">
+            <label class="toggle-switch">
+                <input type="checkbox" id="aiModeToggle">
+                <span class="slider"></span>
+            </label>
+            <span class="ai-label" id="aiStatus">AI Mode: OFF</span>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Left Panel: Code Editor -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h2>Code Editor</h2>
+                    <div class="editor-buttons">
+                        <button onclick="runCode()" class="btn-run">▶ Run</button>
+                        <button onclick="clearEditor()" class="btn-clear">Clear</button>
+                        <button onclick="loadExample()" class="btn-example">Example</button>
+                    </div>
+                </div>
+                <textarea id="codeEditor" placeholder="Type your SimpleLang code here...&#10;&#10;Example:&#10;say &quot;Hello World&quot;&#10;make x 10&#10;say x"></textarea>
+            </div>
+
+            <!-- Right Panel: Multicolor Shell -->
+            <div class="shell-panel">
+                <div class="panel-header">
+                    <h2>SimpleLang Shell</h2>
+                    <div class="shell-buttons">
+                        <button onclick="viewStoredData()" class="btn-view">📊 View Data</button>
+                        <button onclick="clearShell()" class="btn-clear">Clear</button>
+                        <button onclick="downloadPDF()" class="btn-pdf">📄 PDF Guide</button>
+                    </div>
+                </div>
+                <div id="shellOutput" class="shell-output"></div>
+                <div class="shell-input-container">
+                    <span class="shell-prompt">simple&gt;</span>
+                    <input type="text" id="shellInput" class="shell-input" placeholder="Type commands here..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Assistant Panel (shown when AI mode is ON) -->
+        <div id="aiPanel" class="ai-panel hidden">
+            <div class="panel-header">
+                <h2>🤖 AI Assistant</h2>
+            </div>
+            <div id="aiChat" class="ai-chat"></div>
+            <div class="ai-input-container">
+                <input type="text" id="aiInput" class="ai-input" placeholder="Ask AI to build, fix, or improve your code..." autocomplete="off">
+                <button onclick="sendAIMessage()" class="btn-send">Send</button>
+            </div>
+        </div>
+
+        <!-- Footer with Marquee -->
+        <footer>
+            <marquee behavior="scroll" direction="right" class="marquee-footer">
+                <span class="marquee-text">💡 SimpleLang - Variables, Arrays, Loops, Functions, Data Storage - All Auto-Saved! 💡</span>
+            </marquee>
+        </footer>
+    </div>
+
+    <script src="interpreter.js"></script>
+    <script src="ai-assistant.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

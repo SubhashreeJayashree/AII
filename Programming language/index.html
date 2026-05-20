@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novi One IDE v2</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <strong>Novi One IDE v2</strong>
+      </div>
+      <div class="controls">
+        <button id="runBtn">Run</button>
+        <button id="askBtn">Ask AI</button>
+        <button id="helpBtn">Help</button>
+        <button id="themeBtn">Switch Theme</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <h3>Novi Unified Modules</h3>
+        <div class="sidebar-buttons">
+          <button class="sidebarModuleBtn" data-topic="web ui engine">Web UI Engine</button>
+          <button class="sidebarModuleBtn" data-topic="iot protocol stack">IoT Protocol Stack</button>
+          <button class="sidebarModuleBtn" data-topic="cloud connectors">Cloud Connectors</button>
+          <button class="sidebarModuleBtn" data-topic="ml runtime">ML Runtime</button>
+          <button class="sidebarModuleBtn" data-topic="system apis">System APIs</button>
+        </div>
+      </aside>
+
+      <section class="editor-panel">
+        <div class="panel-subtitle">Easy and efficient Novi language with built-in AI Agent for all development domains.</div>
+        <div class="panel-title">Editor (Novi Native Syntax Only)</div>
+        <textarea id="codeEditor" spellcheck="false">core main {
+  temp := 82
+  when temp > 80 {
+    note := ask "suggest immediate cooling action"
+    show note.text
+  }
+}</textarea>
+        <div class="hint-row">
+          <button class="chip explain" id="chipExplain">Explain</button>
+          <button class="chip fix" id="chipFix">Fix</button>
+          <button class="chip gen" id="chipGen">Generate</button>
+          <button class="chip perf" id="chipPerf">Reduce latency</button>
+        </div>
+        <div class="panel-title output-title">Program Output</div>
+        <pre id="programOutput">No output yet. Press Run to execute Novi code.</pre>
+        <div class="panel-title output-title">Terminal</div>
+        <pre id="terminalOutput">Novi Terminal ready. Type a command and click Execute.
+Examples:
+- run
+- ai best node.js api pattern
+- write program hello world and add a+b a=1 b=4
+- clear</pre>
+        <div class="voice-row">
+          <input id="terminalInput" placeholder="Type terminal command here">
+          <button id="terminalRunBtn">Execute</button>
+        </div>
+      </section>
+
+      <aside class="right-panel">
+        <div class="panel-title">AI Agent</div>
+        <div class="panel-subtitle">Ask any coding question: .NET, Node.js, RDBMS, web, AI, and more</div>
+        <div class="module-buttons">
+          <button class="moduleBtn" data-module="web">+ Web</button>
+          <button class="moduleBtn" data-module="iot">+ IoT</button>
+          <button class="moduleBtn" data-module="cloud">+ Cloud</button>
+          <button class="moduleBtn" data-module="ml">+ ML</button>
+          <button class="moduleBtn" data-module="system">+ System</button>
+          <button class="moduleBtn" data-module="python">+ Python</button>
+          <button class="moduleBtn" data-module="java">+ Java</button>
+          <button class="moduleBtn" data-module="cpp">+ C/C++</button>
+          <button class="moduleBtn" data-module="rdbms">+ RDBMS</button>
+          <button class="moduleBtn" data-module="ui">+ UI Builder</button>
+        </div>
+        <label for="askInput">Ask in natural language</label>
+        <input id="askInput" placeholder="Example: optimize this loop for real-time">
+        <div class="voice-row">
+          <button id="sendAskBtn">Send Query</button>
+          <button id="voiceBtn">Voice Input</button>
+          <button id="speakBtn">Speak Answer</button>
+        </div>
+        <pre id="aiOutput">Novi AI ready.
+Tip: click module buttons to inject full-stack code in one language.</pre>
+      </aside>
+    </main>
+
+    <footer class="bottombar">
+      <div class="stat">Latency: <strong id="latency">-- ms</strong></div>
+      <div class="stat">P95: <strong id="p95">-- ms</strong></div>
+      <div class="stat">AI: <strong id="aiStatus">Online</strong></div>
+      <div class="stat">Build: <strong id="buildStatus">Idle</strong></div>
+      <div class="legal-links">
+        <a href="./HOW_IT_WORKS.md" target="_blank" rel="noopener noreferrer">How It Works</a>
+        <a href="./LICENSE" target="_blank" rel="noopener noreferrer">License</a>
+        <a href="./TERMS.md" target="_blank" rel="noopener noreferrer">Terms</a>
+        <a href="./NOTICE.md" target="_blank" rel="noopener noreferrer">Notice</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+==========================================
+  SimpleLang - Quick Start Guide
+  Only 3 Commands: say, make, ask
+==========================================
+
+HOW TO RUN THE APPLICATION:
+----------------------------
+1. Double-click on "index.html" file
+   OR
+2. Right-click on "index.html" → Open with → Your web browser
+   OR
+3. Open your web browser and drag "index.html" into it
+
+That's it! No installation needed!
+
+
+FEATURES:
+---------
+✓ Code Editor - Write your FlowLang programs
+✓ Multicolor Shell - See output in beautiful colors
+✓ AI Assistant - Get help with coding (toggle AI Mode ON)
+✓ PDF Guide - Click "PDF Guide" button for documentation
+✓ Examples - Click "Example" button to load sample code
+
+
+QUICK TEST:
+-----------
+1. In the Code Editor, type:
+   say "Hello SimpleLang!"
+
+2. Click "Run" button
+
+3. See the output in the Shell (right side)
+
+
+USING AI ASSISTANT:
+-------------------
+1. Toggle "AI Mode" to ON (top of the page)
+2. Type in the AI chat: "Build a calculator"
+3. AI will create code for you!
+4. Click "Run" to execute it
+
+
+SHELL COMMANDS:
+---------------
+Type directly in the shell (bottom right):
+- say "Hello"
+- make x 10
+- say x
+- help (for examples)
+
+
+NEED HELP?
+----------
+- Click "PDF Guide" button for documentation
+- Read "SimpleLang-Guide.md" file
+- Use the AI Assistant (toggle AI Mode ON)
+- Check "README.md" for more information
+
+ONLY 3 COMMANDS:
+----------------
+1. say - Display text/numbers
+2. make - Create variables
+3. ask - Get user input
+
+That's it! Super simple!
+
+ENJOY CODING WITH SIMPLELANG! 🌟

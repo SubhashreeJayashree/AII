@@ -1,0 +1,190 @@
+2025-11-25T17:52:59.546772 - INFO - about_to_speak idx=0 text='The magic stumbled upon a forest by the dragon.'
+2025-11-25T17:54:32.298449 - INFO - about_to_speak idx=0 text='The magic stumbled upon a forest by the dragon.\nIn the dragon, a forest discovered an old magic.\nUnder the forest, the magic and the dragon made a pact.\nA magic and a forest raced toward the dragon at dusk.\nNo one expected the magic to be guarded by a forest in the dragon.\nThe dragon stumbled upon a magic by the forest.\nIn the forest, a magic discovered an old dragon.\nUnder the magic, the dragon and the forest made a pact.\nA dragon and a magic raced toward the forest at dusk.\nNo one expected the dragon to be guarded by a magic in the forest.'
+2025-11-25T17:58:32.694377 - ENQUEUE - count=10 combine=False group=1
+2025-11-25T17:58:32.741965 - PLAYBACK_START batch_len=10
+2025-11-25T17:58:32.977382 - INFO - about_to_speak idx=0 text='The magic stumbled upon a forest by the dragon.'
+2025-11-25T17:58:36.863704 - INFO - about_to_speak idx=1 text='In the dragon, a forest discovered an old magic.'
+2025-11-25T17:58:37.570248 - INFO - about_to_speak idx=2 text='Under the forest, the magic and the dragon made a pact.'
+2025-11-25T17:58:38.272374 - INFO - about_to_speak idx=3 text='A magic and a forest raced toward the dragon at dusk.'
+2025-11-25T17:58:38.978515 - INFO - about_to_speak idx=4 text='No one expected the magic to be guarded by a forest in the dragon.'
+2025-11-25T17:58:39.679493 - INFO - about_to_speak idx=5 text='The dragon stumbled upon a magic by the forest.'
+2025-11-25T17:58:40.380051 - INFO - about_to_speak idx=6 text='In the forest, a magic discovered an old dragon.'
+2025-11-25T17:58:41.086080 - INFO - about_to_speak idx=7 text='Under the magic, the dragon and the forest made a pact.'
+2025-11-25T17:58:41.779806 - INFO - about_to_speak idx=8 text='A dragon and a magic raced toward the forest at dusk.'
+2025-11-25T17:58:42.472395 - INFO - about_to_speak idx=9 text='No one expected the dragon to be guarded by a magic in the forest.'
+2025-11-25T17:58:43.167460 - PLAYBACK_END batch_len=10
+2025-11-25T17:58:45.901308 - ENQUEUE - count=10 combine=False group=1
+2025-11-25T17:59:09.175092 - ENQUEUE - count=10 combine=False group=1
+2025-11-25T17:59:09.190705 - PLAYBACK_START batch_len=10
+2025-11-25T17:59:09.419185 - INFO - about_to_speak idx=0 text='The magic stumbled upon a forest by the dragon.'
+2025-11-25T17:59:13.302504 - INFO - about_to_speak idx=1 text='In the dragon, a forest discovered an old magic.'
+2025-11-25T17:59:13.992991 - INFO - about_to_speak idx=2 text='Under the forest, the magic and the dragon made a pact.'
+2025-11-25T17:59:14.690737 - INFO - about_to_speak idx=3 text='A magic and a forest raced toward the dragon at dusk.'
+2025-11-25T17:59:15.379579 - INFO - about_to_speak idx=4 text='No one expected the magic to be guarded by a forest in the dragon.'
+2025-11-25T17:59:16.070807 - INFO - about_to_speak idx=5 text='The dragon stumbled upon a magic by the forest.'
+2025-11-25T17:59:16.760188 - INFO - about_to_speak idx=6 text='In the forest, a magic discovered an old dragon.'
+2025-11-25T17:59:17.444769 - INFO - about_to_speak idx=7 text='Under the magic, the dragon and the forest made a pact.'
+2025-11-25T17:59:18.140251 - INFO - about_to_speak idx=8 text='A dragon and a magic raced toward the forest at dusk.'
+2025-11-25T17:59:18.856282 - INFO - about_to_speak idx=9 text='No one expected the dragon to be guarded by a magic in the forest.'
+2025-11-25T17:59:19.547114 - PLAYBACK_END batch_len=10
+2025-11-25T18:00:22.252850 - ENQUEUE - count=1 combine=False group=10
+2025-11-25T18:00:22.300608 - PLAYBACK_START batch_len=1
+2025-11-25T18:00:22.523011 - INFO - about_to_speak idx=0 text='The magic stumbled upon a forest by the dragon.'
+2025-11-25T18:00:26.415744 - PLAYBACK_END batch_len=1
+2025-11-25 18:04:10,135 - INFO - TTSManager initialized
+2025-11-25 18:04:28,121 - INFO - ENQUEUE: 30 lines
+2025-11-25 18:04:28,215 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\HP USER\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-11-25 18:04:28,216 - INFO - Using writeable comtypes cache directory: 'C:\Users\HP USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\comtypes\gen'
+2025-11-25 18:04:28,376 - INFO - PLAYBACK_START idx=0 text='magic discovered a crystal in the quest'
+2025-11-25 18:04:29,917 - INFO - Stop requested
+2025-11-25 18:04:31,832 - INFO - PLAYBACK_END idx=0
+2025-11-25 18:04:32,433 - INFO - Stop event triggered
+2025-11-25 18:04:34,191 - INFO - ENQUEUE: 30 lines
+2025-11-25 18:04:34,191 - INFO - PLAYBACK_START idx=0 text='magic discovered a crystal in the quest'
+2025-11-25 18:04:34,314 - INFO - PLAYBACK_END idx=0
+2025-11-25 18:04:34,915 - INFO - PLAYBACK_START idx=1 text='A magic guarded the quest and crystal'
+2025-11-25 18:04:35,033 - INFO - PLAYBACK_END idx=1
+2025-11-25 18:04:35,634 - INFO - PLAYBACK_START idx=2 text='The quest found magic near the crystal'
+2025-11-25 18:04:35,742 - INFO - PLAYBACK_END idx=2
+2025-11-25 18:04:36,343 - INFO - PLAYBACK_START idx=3 text='magic and crystal explored the quest'
+2025-11-25 18:04:36,464 - INFO - PLAYBACK_END idx=3
+2025-11-25 18:04:37,066 - INFO - PLAYBACK_START idx=4 text='Beyond the magic, crystal met quest'
+2025-11-25 18:04:37,188 - INFO - PLAYBACK_END idx=4
+2025-11-25 18:04:37,789 - INFO - PLAYBACK_START idx=5 text='quest discovered a magic in the crystal'
+2025-11-25 18:04:37,914 - INFO - PLAYBACK_END idx=5
+2025-11-25 18:04:38,515 - INFO - PLAYBACK_START idx=6 text='A quest guarded the crystal and magic'
+2025-11-25 18:04:38,629 - INFO - PLAYBACK_END idx=6
+2025-11-25 18:04:39,230 - INFO - PLAYBACK_START idx=7 text='The crystal found quest near the magic'
+2025-11-25 18:04:39,347 - INFO - PLAYBACK_END idx=7
+2025-11-25 18:04:39,948 - INFO - PLAYBACK_START idx=8 text='quest and magic explored the crystal'
+2025-11-25 18:04:40,060 - INFO - PLAYBACK_END idx=8
+2025-11-25 18:04:40,660 - INFO - PLAYBACK_START idx=9 text='Beyond the quest, magic met crystal'
+2025-11-25 18:04:40,781 - INFO - PLAYBACK_END idx=9
+2025-11-25 18:04:41,382 - INFO - PLAYBACK_START idx=10 text='crystal discovered a quest in the magic'
+2025-11-25 18:04:41,488 - INFO - PLAYBACK_END idx=10
+2025-11-25 18:04:42,089 - INFO - PLAYBACK_START idx=11 text='A crystal guarded the magic and quest'
+2025-11-25 18:04:42,207 - INFO - PLAYBACK_END idx=11
+2025-11-25 18:04:42,808 - INFO - PLAYBACK_START idx=12 text='The magic found crystal near the quest'
+2025-11-25 18:04:42,929 - INFO - PLAYBACK_END idx=12
+2025-11-25 18:04:43,530 - INFO - PLAYBACK_START idx=13 text='crystal and quest explored the magic'
+2025-11-25 18:04:43,633 - INFO - PLAYBACK_END idx=13
+2025-11-25 18:04:44,234 - INFO - PLAYBACK_START idx=14 text='Beyond the crystal, quest met magic'
+2025-11-25 18:04:44,344 - INFO - PLAYBACK_END idx=14
+2025-11-25 18:04:44,945 - INFO - PLAYBACK_START idx=15 text='magic discovered a crystal in the quest'
+2025-11-25 18:04:45,061 - INFO - PLAYBACK_END idx=15
+2025-11-25 18:04:45,662 - INFO - PLAYBACK_START idx=16 text='A magic guarded the quest and crystal'
+2025-11-25 18:04:45,775 - INFO - PLAYBACK_END idx=16
+2025-11-25 18:04:46,376 - INFO - PLAYBACK_START idx=17 text='The quest found magic near the crystal'
+2025-11-25 18:04:46,486 - INFO - PLAYBACK_END idx=17
+2025-11-25 18:04:47,088 - INFO - PLAYBACK_START idx=18 text='magic and crystal explored the quest'
+2025-11-25 18:04:47,190 - INFO - PLAYBACK_END idx=18
+2025-11-25 18:04:47,791 - INFO - PLAYBACK_START idx=19 text='Beyond the magic, crystal met quest'
+2025-11-25 18:04:47,892 - INFO - PLAYBACK_END idx=19
+2025-11-25 18:04:48,497 - INFO - PLAYBACK_START idx=20 text='quest discovered a magic in the crystal'
+2025-11-25 18:04:48,601 - INFO - PLAYBACK_END idx=20
+2025-11-25 18:04:49,202 - INFO - PLAYBACK_START idx=21 text='A quest guarded the crystal and magic'
+2025-11-25 18:04:49,301 - INFO - PLAYBACK_END idx=21
+2025-11-25 18:04:49,902 - INFO - PLAYBACK_START idx=22 text='The crystal found quest near the magic'
+2025-11-25 18:04:50,013 - INFO - PLAYBACK_END idx=22
+2025-11-25 18:04:50,614 - INFO - PLAYBACK_START idx=23 text='quest and magic explored the crystal'
+2025-11-25 18:04:50,730 - INFO - PLAYBACK_END idx=23
+2025-11-25 18:04:51,331 - INFO - PLAYBACK_START idx=24 text='Beyond the quest, magic met crystal'
+2025-11-25 18:04:51,447 - INFO - PLAYBACK_END idx=24
+2025-11-25 18:04:52,048 - INFO - PLAYBACK_START idx=25 text='crystal discovered a quest in the magic'
+2025-11-25 18:04:52,190 - INFO - PLAYBACK_END idx=25
+2025-11-25 18:04:52,791 - INFO - PLAYBACK_START idx=26 text='A crystal guarded the magic and quest'
+2025-11-25 18:04:52,924 - INFO - PLAYBACK_END idx=26
+2025-11-25 18:04:53,525 - INFO - PLAYBACK_START idx=27 text='The magic found crystal near the quest'
+2025-11-25 18:04:53,652 - INFO - PLAYBACK_END idx=27
+2025-11-25 18:04:54,253 - INFO - PLAYBACK_START idx=28 text='crystal and quest explored the magic'
+2025-11-25 18:04:54,369 - INFO - PLAYBACK_END idx=28
+2025-11-25 18:04:54,970 - INFO - PLAYBACK_START idx=29 text='Beyond the crystal, quest met magic'
+2025-11-25 18:04:55,098 - INFO - PLAYBACK_END idx=29
+2025-11-25 18:06:02,424 - Speaking 31 lines
+2025-11-25 18:06:02,545 - Imported existing <module 'comtypes.gen' from 'C:\\Users\\HP USER\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-11-25 18:06:02,546 - Using writeable comtypes cache directory: 'C:\Users\HP USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\comtypes\gen'
+2025-11-25 18:07:57,681 - SPEAK: 5 lines
+2025-11-25 18:07:57,750 - Imported existing <module 'comtypes.gen' from 'C:\\Users\\HP USER\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-11-25 18:07:57,750 - Using writeable comtypes cache directory: 'C:\Users\HP USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\comtypes\gen'
+2025-11-25 18:08:01,411 - Done line 0
+2025-11-25 18:08:05,707 - Done line 1
+2025-11-25 18:08:09,593 - SPEAK: 5 lines
+2025-11-25 18:08:13,147 - Done line 0
+2025-11-25 18:08:17,424 - Done line 1
+2025-11-25 18:08:21,907 - Done line 2
+2025-11-25 18:08:26,460 - Done line 3
+2025-11-25 18:08:31,195 - Done line 4
+2025-11-25 18:08:40,375 - SPEAK: 50 lines
+2025-11-25 18:08:43,992 - Done line 0
+2025-11-25 18:08:48,445 - Done line 1
+2025-11-25 18:08:53,152 - Done line 2
+2025-11-25 18:08:57,907 - Done line 3
+2025-11-25 18:09:02,696 - Done line 4
+2025-11-25 18:09:07,343 - Done line 5
+2025-11-25 18:09:11,767 - Done line 6
+2025-11-25 18:09:16,463 - Done line 7
+2025-11-25 18:09:21,181 - Done line 8
+2025-11-25 18:09:26,073 - Done line 9
+2025-11-25 18:09:30,668 - Done line 10
+2025-11-25 18:09:35,115 - Done line 11
+2025-11-25 18:09:39,801 - Done line 12
+2025-11-25 18:09:44,487 - Done line 13
+2025-11-25 18:09:49,394 - Done line 14
+2025-11-25 18:09:53,997 - Done line 15
+2025-11-25 18:09:58,443 - Done line 16
+2025-11-25 18:10:03,134 - Done line 17
+2025-11-25 18:10:07,918 - Done line 18
+2025-11-25 18:10:12,707 - Done line 19
+2025-11-25 18:10:17,352 - Done line 20
+2025-11-25 18:10:21,801 - Done line 21
+2025-11-25 18:10:26,498 - Done line 22
+2025-11-25 18:10:31,242 - Done line 23
+2025-11-25 18:10:36,142 - Done line 24
+2025-11-25 18:10:40,719 - Done line 25
+2025-11-25 18:10:45,149 - Done line 26
+2025-11-25 18:10:49,821 - Done line 27
+2025-11-25 18:10:54,539 - Done line 28
+2025-11-25 18:10:59,481 - Done line 29
+2025-11-25 18:11:04,073 - Done line 30
+2025-11-25 18:11:08,523 - Done line 31
+2025-11-25 18:11:13,238 - Done line 32
+2025-11-25 18:11:17,968 - Done line 33
+2025-11-25 18:11:22,740 - Done line 34
+2025-11-25 18:11:27,413 - Done line 35
+2025-11-25 18:11:31,872 - Done line 36
+2025-11-25 18:11:36,597 - Done line 37
+2025-11-25 18:11:41,322 - Done line 38
+2025-11-25 18:11:46,216 - Done line 39
+2025-11-25 18:11:50,773 - Done line 40
+2025-11-25 18:11:55,211 - Done line 41
+2025-11-25 18:11:59,903 - Done line 42
+2025-11-25 18:12:04,603 - Done line 43
+2025-11-25 18:12:09,515 - Done line 44
+2025-11-25 18:12:14,094 - Done line 45
+2025-11-25 18:12:18,542 - Done line 46
+2025-11-25 18:12:23,209 - Done line 47
+2025-11-25 18:12:27,969 - Done line 48
+2025-11-25 18:12:32,745 - Done line 49
+2025-11-25 18:13:20,373 - SPEAK: 10 lines
+2025-11-25 18:13:20,435 - Imported existing <module 'comtypes.gen' from 'C:\\Users\\HP USER\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-11-25 18:13:20,435 - Using writeable comtypes cache directory: 'C:\Users\HP USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\comtypes\gen'
+2025-11-25 18:13:24,762 - Done line 0
+2025-11-25 18:13:29,909 - Done line 1
+2025-11-25 18:13:35,103 - Done line 2
+2025-11-25 18:13:40,365 - Done line 3
+2025-11-25 18:13:45,874 - Done line 4
+2025-11-25 18:13:51,060 - Done line 5
+2025-11-25 18:13:56,158 - Done line 6
+2025-11-25 18:14:01,120 - Done line 7
+2025-11-25 18:14:06,304 - Done line 8
+2025-11-25 18:14:10,113 - SPEAK: 10 lines
+2025-11-25 18:14:14,335 - Done line 0
+2025-11-25 18:14:19,365 - Done line 1
+2025-11-25 18:14:24,552 - Done line 2
+2025-11-25 18:14:29,797 - Done line 3
+2025-11-25 18:14:35,326 - Done line 4
+2025-11-25 18:14:40,538 - Done line 5
+2025-11-25 18:14:45,582 - Done line 6
+2025-11-25 18:14:50,530 - Done line 7
+2025-11-25 18:14:55,731 - Done line 8
+2025-11-25 18:15:01,012 - Done line 9

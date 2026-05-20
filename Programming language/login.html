@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Novi IDE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .login-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .brand {
+      margin-bottom: 30px;
+    }
+    .brand-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #ffcf66;
+      border-radius: 50%;
+      margin-right: 8px;
+      box-shadow: 0 0 10px #ffcf66;
+    }
+    .brand h1 {
+      display: inline;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .input-grp {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .input-grp label {
+      display: block;
+      font-size: 13px;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+    .input-grp input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.2);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+    .input-grp input:focus {
+      border: 1px solid #ffcf66;
+      box-shadow: 0 0 8px rgba(255, 207, 102, 0.5);
+    }
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      background: #ffcf66;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .login-btn:hover {
+      background: #ffdb85;
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(255, 207, 102, 0.4);
+    }
+    .login-btn:active {
+      transform: scale(0.98);
+    }
+    .hint {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <h1>Novi Unified IDE</h1>
+    </div>
+    <form id="loginForm">
+      <div class="input-grp">
+        <label for="username">Developer / Agent ID</label>
+        <input type="text" id="username" placeholder="Enter your ID" required autocomplete="off">
+      </div>
+      <div class="input-grp">
+        <label for="password">Security Protocol Key</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="login-btn">Authenticate</button>
+    </form>
+    <div class="hint">
+      Authorized personnel only. Agent connects natively to IDE workspace upon entry.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const btn = document.querySelector(".login-btn");
+      btn.textContent = "Connecting to Workspace...";
+      btn.style.background = "#2ed573";
+      
+      // Animate transition to IDE Dashboard
+      const container = document.querySelector(".login-container");
+      setTimeout(() => {
+        container.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+        container.style.transform = "translateY(-50px)";
+        container.style.opacity = "0";
+      }, 500);
+      
+      setTimeout(() => {
+        window.location.href = "./index.html"; // Jumps to the IDE
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

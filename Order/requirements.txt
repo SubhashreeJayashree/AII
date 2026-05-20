@@ -1,0 +1,18 @@
+# Web Framework and Server
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.25
+# psycopg2-binary  <-- Uncomment this if you switch from SQLite to PostgreSQL
+
+# AI and Logic
+google-generativeai==0.3.2
+pydantic==2.6.0
+requests==2.31.0
+
+# Security (Optional but recommended)
+python-dotenv==1.0.1
+
+

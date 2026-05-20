@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment Deadline Optimizer</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Assignment Deadline Optimizer (MVP)</h1>
+
+    <section>
+      <h2>Add Assignment</h2>
+      <form id="assignmentForm">
+        <input type="hidden" id="aid" />
+        <label>Title: <input id="title" required></label>
+        <label>Course: <input id="course"></label>
+        <label>Due date: <input id="due" type="datetime-local" required></label>
+        <label>Est hours: <input id="hours" type="number" step="0.5" min="0.5" value="2"></label>
+        <label>Priority (1=normal): <input id="priority" type="number" min="1" max="5" value="1"></label>
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Weekly Availability (time windows)</h2>
+      <div id="windows-editor">
+        <div class="small">Add one or more time windows (start/end) for each weekday. Times are HH:MM.</div>
+        <div id="windows"></div>
+        <div style="margin-top:8px">
+          <button id="addWindow" class="secondary">Add Window</button>
+          <button id="saveWindows">Save Windows</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Generate Schedule</h2>
+      <label>Pomodoro length (min): <input id="pom" type="number" value="25"></label>
+      <button id="gen">Generate</button>
+      <button id="export">Export ICS</button>
+    </section>
+
+    <section>
+      <h2>Schedule</h2>
+      <div id="schedule"></div>
+    </section>
+
+    <section>
+      <h2>Assignments</h2>
+      <div id="assignments"></div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

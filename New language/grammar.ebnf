@@ -1,0 +1,9 @@
+program      = { statement } ;
+statement    = assignment | agent_def | task_call ;
+assignment   = identifier "=" expression ";" ;
+agent_def    = "agent" identifier "{" { statement } "}" ;
+task_call    = "task" "(" expression ")" ";" ;
+expression   = term { ("+"|"-") term } ;
+term         = factor { ("*"|"/") factor } ;
+factor       = number | identifier | "(" expression ")" | string ;
+string       = '"' { any_character } '"' ;

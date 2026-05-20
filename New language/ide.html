@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AION Studio IDE</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f13;
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --accent-1: #00f2fe;
+            --accent-2: #4facfe;
+            --ai-color: #ff0844;
+            --text: #ffffff;
+            --text-muted: #a0a0b0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Moving Marquee */
+        .marquee {
+            width: 100%;
+            background: linear-gradient(90deg, #ff0844 0%, #ffb199 100%);
+            color: #fff;
+            padding: 8px 0;
+            font-weight: 600;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4);
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 15s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+        }
+
+        /* Login Screen Overlay */
+        #login-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 15, 19, 0.98);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-out;
+        }
+        .login-box {
+            padding: 50px;
+            width: 450px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .login-box h1 {
+            background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            font-size: 38px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.3);
+            color: white;
+            outline: none;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        .input-group input:focus { border-color: var(--accent-1); }
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+            color: #fff;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4); }
+
+        /* Main IDE Layout */
+        .ide-container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+            height: calc(100vh - 35px);
+        }
+
+        /* Code Editor Area */
+        .editor-section {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .toolbar {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .voice-btn {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .voice-btn:hover { transform: scale(1.05); }
+        .voice-btn.recording { animation: pulse 1.5s infinite; background: #ff0844; }
+        
+        textarea {
+            flex: 1;
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #00f2fe;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            padding: 20px;
+            resize: none;
+            outline: none;
+            line-height: 1.5;
+        }
+        textarea::placeholder { color: rgba(255,255,255,0.2); }
+
+        /* AI Chat + Guidelines Sidebar */
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .ai-panel, .guidelines-panel {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: hidden;
+        }
+        .panel-header {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .chat-box { flex: 1; overflow-y: auto; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px; padding-right: 10px; }
+        .chat-msg { padding: 12px; border-radius: 8px; max-width: 90%; font-size: 14px; line-height: 1.4; }
+        .chat-user { background: rgba(0, 242, 254, 0.2); align-self: flex-end; border-bottom-right-radius: 0; }
+        .chat-ai { background: rgba(255, 8, 68, 0.2); align-self: flex-start; border-bottom-left-radius: 0; }
+        
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            border-radius: 8px;
+            outline: none;
+        }
+        .chat-input input:focus { border-color: var(--ai-color); }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 8, 68, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 8, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 8, 68, 0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+    </style>
+</head>
+<body>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <span>🚀 Welcome to AION Studio - The AI Native Programming Language Environment • Multi-Color UI Active • Voice Recognition Online • AINO AI Integration Ready • Build The Future! 🚀</span>
+    </div>
+
+    <!-- Login Overlay -->
+    <div id="login-overlay">
+        <div class="glass login-box">
+            <h1>AION Studio</h1>
+            <p style="color:var(--text-muted); margin-bottom: 30px;">Authenticate to initialize Engine</p>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button class="btn" onclick="login()">Enter IDE</button>
+            <p id="login-msg" style="color: #38ef7d; margin-top: 15px; font-size: 13px; font-weight: bold; display: none;">User authenticated & stored in DB!</p>
+        </div>
+    </div>
+
+    <!-- IDE Interface -->
+    <div class="ide-container">
+        
+        <!-- Code Editor -->
+        <div class="glass editor-section">
+            <div class="toolbar">
+                <button class="voice-btn" id="mic-btn" onclick="toggleVoice()">🎙️ Start Voice Input</button>
+                <button class="btn" style="width: auto; padding: 10px 20px;" onclick="runCode()">▶ Run AION Script</button>
+                <div style="margin-left: auto; color: var(--text-muted); font-size: 14px; align-self: center;">workspace/main.aion</div>
+            </div>
+            <textarea id="code-editor" spellcheck="false" placeholder="Write AION code here or tap 'Start Voice Input' to speak your code...&#10;&#10;msg = &quot;AION System Online&quot;;&#10;task(msg);&#10;&#10;agent Jarvis {&#10;   task('Neural Link Active');&#10;}"></textarea>
+            
+            <div style="background: rgba(0,0,0,0.9); padding: 15px; border-radius: 8px; border: 1px solid #00f2fe; display: flex; flex-direction: column; min-height: 250px; flex-shrink: 0; position: relative;">
+                <div style="color: #00f2fe; font-size: 11px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(0,242,254,0.2); padding-bottom: 5px;">
+                    <span style="color: #ff0844;">●</span> AION Core Terminal
+                </div>
+                <div id="terminal-output" style="flex: 1; overflow-y: scroll; color: #38ef7d; font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; white-space: pre-wrap; padding-right: 10px; scroll-behavior: smooth; line-height: 1.6;">Engine Ready. Waiting for script execution...</div>
+                <style>
+                    #terminal-output::-webkit-scrollbar { width: 8px; }
+                    #terminal-output::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+                    #terminal-output::-webkit-scrollbar-thumb { background: #00f2fe; border-radius: 4px; }
+                    #terminal-output::-webkit-scrollbar-thumb:hover { background: #4facfe; }
+                </style>
+            </div>
+        </div>
+
+        <!-- Sidebar (AI + Guidelines) -->
+        <div class="sidebar">
+            <div class="glass ai-panel">
+                <div class="panel-header" style="color: #ffb199;">✨ AINO AI Assistant</div>
+                <div class="chat-box" id="ai-chat-box">
+                    <div class="chat-msg chat-ai">Hello! I am your embedded AINO AI. Ask me formatting, coding, or logic questions!</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="ai-prompt" placeholder="Ask AI a question..." onkeypress="if(event.key === 'Enter') askAI()">
+                    <button class="btn" style="width: auto; padding: 10px 15px;" onclick="askAI()">Send</button>
+                </div>
+            </div>
+
+            <div class="glass guidelines-panel" style="overflow-y: auto;">
+                <div class="panel-header" style="color:var(--accent-2);">📚 User Guidelines</div>
+                <ul style="font-size: 14px; color: var(--text-muted); padding-left: 20px; line-height: 1.8;">
+                    <li><strong>Grammar:</strong> Finish declarations with a semicolon (<code>a = 10;</code>).</li>
+                    <li><strong>Agents:</strong> Use <code>agent Name {}</code> to define entities.</li>
+                    <li><strong>Output:</strong> Direct log output is handled via <code>task(expression);</code>.</li>
+                    <li><strong>Math:</strong> Precedence (BEDMAS) natively supported (<code>a * (b + c)</code>).</li>
+                    <li><strong>Voice Input:</strong> Native Google Web Speech API active. Speak naturally!</li>
+                    <li><strong>AI Help:</strong> Use the panel above for AION code generation & Hints.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Utility: Copy to Clipboard
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const oldText = btn.innerText;
+                btn.innerText = "Copied!";
+                btn.style.background = "#38ef7d";
+                setTimeout(() => {
+                    btn.innerText = oldText;
+                    btn.style.background = "rgba(255,177,153,0.2)";
+                }, 2000);
+            });
+        }
+
+        // 1. Mock Database Storage using HTML5 LocalStorage
+        function login() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if(!user || !pass) return;
+            
+            // Simulating Database transaction
+            localStorage.setItem("aion_db_user", user);
+            document.getElementById('login-msg').style.display = 'block';
+            
+            setTimeout(() => {
+                document.getElementById('login-overlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('login-overlay').style.display = 'none';
+                }, 500);
+            }, 1000);
+        }
+
+        // Allow pressing Enter to login
+        document.getElementById('password').addEventListener("keyup", function(event) {
+            if (event.key === "Enter") login();
+        });
+
+        // 2. Web Speech API (Voice Input)
+        let recognizing = false;
+        let recognition = null;
+        if ('webkitSpeechRecognition' in window) {
+            recognition = new webkitSpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = true;
+
+            recognition.onresult = function(event) {
+                let interimTranscript = '';
+                let finalTranscript = '';
+
+                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        finalTranscript += event.results[i][0].transcript;
+                    } else {
+                        interimTranscript += event.results[i][0].transcript;
+                    }
+                }
+                
+                if(finalTranscript) {
+                    const editor = document.getElementById('code-editor');
+                    editor.value += finalTranscript + '\\n';
+                }
+            };
+
+            recognition.onerror = function(event) { console.error('Speech recognition error', event.error); };
+            recognition.onend = function() {
+                recognizing = false;
+                document.getElementById('mic-btn').innerHTML = "🎙️ Start Voice Input";
+                document.getElementById('mic-btn').classList.remove("recording");
+            };
+        }
+
+        function toggleVoice() {
+            if(!recognition) { alert("Your browser doesn't support the raw Speech API. Try Chrome or Edge!"); return; }
+            if(recognizing) {
+                recognition.stop();
+                return;
+            }
+            recognition.start();
+            recognizing = true;
+            document.getElementById('mic-btn').innerHTML = "🛑 Stop Listening...";
+            document.getElementById('mic-btn').classList.add("recording");
+        }
+
+        // 3. AI Copilot (AINO AI Server Integration)
+        async function askAI() {
+            const input = document.getElementById('ai-prompt');
+            const code = document.getElementById('code-editor').value;
+            const val = input.value.trim();
+            if(!val) return;
+            
+            const chatBox = document.getElementById('ai-chat-box');
+            chatBox.innerHTML += `<div class="chat-msg chat-user">${val}</div>`;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+            
+            try {
+                const res = await fetch('/ask_ai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: val, code: code })
+                });
+                const data = await res.json();
+                chatBox.innerHTML += `<div class="chat-msg chat-ai">${data.response}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            } catch(e) {
+                chatBox.innerHTML += `<div class="chat-msg chat-ai" style="color:var(--ai-color)">Error connecting to AINO Brain. Check backend.</div>`;
+            }
+        }
+        
+        // 4. Run Execution API Integration
+        async function runCode() {
+            const code = document.getElementById('code-editor').value;
+            const terminal = document.getElementById('terminal-output');
+            
+            terminal.innerHTML = `<span style="color:var(--accent-1)">▶ Compiling and Executing AION Script...</span><br>`;
+
+            try {
+                const res = await fetch('/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ code: code })
+                });
+                const data = await res.json();
+                
+                let outputMsg = "";
+                if (data.output) {
+                    let lines = data.output.split('\n');
+                    for (let i = 0; i < lines.length; i++) {
+                        let line = lines[i];
+                        if (!line.trim()) continue;
+                        
+                        line = line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                        
+                        if (line.includes("Defined function")) {
+                            line = line.replace(/Defined function (.*?) with params (.*)/, '<span style="color:#a6e22e">Defined function</span> <strong style="color:#fd971f">$1</strong> <span style="color:#a6e22e">with params</span> <span style="color:#ae81ff">$2</span>');
+                        } else if (line.includes("returned")) {
+                            line = line.replace(/(.*?) returned (.*)/, '<strong style="color:#fd971f">$1</strong> <span style="color:#f92672">returned</span> <span style="color:#ae81ff; font-weight:bold;">$2</span>');
+                        } else if (line.includes("AI Agent says:")) {
+                            line = line.replace(/AI Agent says: (.*)/, '<span style="color:#e6db74">🤖 <strong>AI Agent:</strong> $1</span>');
+                        } else if (line.includes("Error")) {
+                            line = `<span style="color:#ff0844; font-weight:bold;">${line}</span>`;
+                        } else if (line.includes(" = ")) {
+                            line = line.replace(/(.*?) = (.*)/, '<span style="color:#66d9ef">$1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff; font-weight:bold;">$2</span>');
+                        } else {
+                            line = `<span style="color:#f8f8f2">${line}</span>`;
+                        }
+                        outputMsg += line + "<br>";
+                    }
+                } else if (data.error) {
+                    outputMsg = `<span style="color:var(--ai-color); font-weight:bold;">Syntax Error: ${data.error}</span><br>`;
+                } else {
+                    outputMsg = "<span style='color:#a0a0b0'>(No output returned by interpreter)</span><br>";
+                }
+                
+                terminal.innerHTML += `<br>${outputMsg}`;
+                terminal.scrollTop = terminal.scrollHeight;
+            } catch(e) {
+                terminal.innerHTML += `<br><span style="color:var(--ai-color)">Engine Backend offline! Ensure server.py is running in the terminal.</span>`;
+            }
+        }
+    </script>
+</body>
+</html>

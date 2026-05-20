@@ -1,0 +1,265 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121a33;
+  --text: #e9f0ff;
+  --muted: #8fa3b8;
+  --accent: #4da3ff;
+  --good: #2ed573;
+  --warn: #ff9f43;
+  --bad: #ff5d73;
+  --purple: #b388ff;
+}
+
+body.light {
+  --bg: #eef4ff;
+  --panel: #ffffff;
+  --text: #15223b;
+  --muted: #4f5f77;
+  --accent: #1f7aff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, #14234d 0%, var(--bg) 50%);
+  color: var(--text);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 64px 1fr 56px;
+}
+
+.topbar, .bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bottombar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 0;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent), var(--purple), var(--good));
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #1f7aff, #9c49ff);
+  font-weight: 600;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 220px 1fr 320px;
+  gap: 12px;
+  padding: 12px;
+}
+
+.sidebar, .editor-panel, .right-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.sidebar-buttons {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebarModuleBtn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #3d4d84;
+  background: linear-gradient(45deg, #305aa6, #5742aa);
+}
+
+.panel-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.panel-subtitle {
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.module-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.moduleBtn {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+#codeEditor {
+  width: 100%;
+  min-height: 320px;
+  resize: vertical;
+  background: #0b1330;
+  color: #eaf2ff;
+  border: 1px solid #2f3e70;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: Consolas, monospace;
+  line-height: 1.5;
+}
+
+.hint-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+}
+
+.explain { background: #42c7ff33; color: #6fddff; }
+.fix { background: #ffb34733; color: #ffc15d; }
+.gen { background: #bb86fc33; color: #d0a8ff; }
+.perf { background: #ff6a6a33; color: #ff8e8e; }
+
+#askInput {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #3d4d84;
+  background: #0f1737;
+  color: var(--text);
+}
+
+.voice-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#aiOutput {
+  margin-top: 10px;
+  min-height: 180px;
+  white-space: pre-wrap;
+  background: #0f1737;
+  border: 1px solid #36477f;
+  border-radius: 10px;
+  padding: 10px;
+  color: #dce8ff;
+}
+
+.output-title {
+  margin-top: 12px;
+}
+
+#programOutput {
+  min-height: 120px;
+  margin-top: 6px;
+  white-space: pre-wrap;
+  background: #09102a;
+  border: 1px solid #35508f;
+  border-radius: 10px;
+  padding: 10px;
+  color: #bde6ff;
+}
+
+#terminalOutput {
+  min-height: 160px;
+  margin-top: 6px;
+  white-space: pre-wrap;
+  background: #070d22;
+  border: 1px solid #4862a0;
+  border-radius: 10px;
+  padding: 10px;
+  color: #b7ffc6;
+  font-family: Consolas, monospace;
+}
+
+#terminalInput {
+  flex: 1;
+  min-width: 220px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #3d4d84;
+  background: #0f1737;
+  color: var(--text);
+}
+
+.stat strong {
+  color: var(--good);
+}
+
+.legal-links {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.legal-links a {
+  color: #ffd166;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}

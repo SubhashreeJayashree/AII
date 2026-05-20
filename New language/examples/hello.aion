@@ -1,0 +1,10 @@
+message = "Testing Math Engine: ";
+base = 10;
+multiplier = 5;
+result = message + (base * multiplier - 8);
+task(result);
+
+agent MathBot {
+    task("Calculated answer: " + result);
+    task("Math operations successful!");
+}
