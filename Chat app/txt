@@ -1,0 +1,4 @@
+Project root: package.json, server.js, .env.example, README.md, Chatapp.js
+Frontend: public/ with index.html, chat.html, feed.html, messages.html, css/style.css, js/chat.js, js/webrtc.js, js/recorder.js
+Optional Python worker: python/requirements.txt, python/ai_worker.py
+Uploads folder: uploads/

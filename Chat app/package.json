@@ -1,0 +1,16 @@
+﻿{
+  "name": "ai-social-clone",
+  "version": "0.2.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^2.6.7",
+    "multer": "^1.4.5",
+    "socket.io": "^4.8.1",
+    "form-data": "^4.0.0"
+  }
+}
