@@ -1,0 +1,19 @@
+HOW TO RUN - AI-Based System Performance Analyzer
+
+1) Open PowerShell and go to the project folder:
+
+   Set-Location "C:\Users\HP USER\Desktop\AI Based System Performance Analyzer"
+
+2) (First time only) Install all required Python packages:
+
+   python -m pip install -r "requirements.txt"
+
+3) Start the real-time analyzer:
+
+   python main.py
+
+4) Open your browser and go to:
+
+   http://127.0.0.1:5000
+
+You will see the real-time dashboard (CPU/RAM/Disk, AI explanation, risk, anomalies, antivirus and suspicious process highlights).
