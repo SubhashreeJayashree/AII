@@ -1,0 +1,3 @@
+pip install -r requirements.txt
+API KEY=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
+python -m streamlit run app.py

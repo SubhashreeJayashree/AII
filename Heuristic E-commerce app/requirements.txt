@@ -1,0 +1,7 @@
+#copy all import lib and download the dependencies form google
+#ecommerce app with heuristic ai app
+streamlit
+python-dotenv
+langchain-groq
+langchain-core
+groq

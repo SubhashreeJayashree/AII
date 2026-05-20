@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zero‑Shot Voice Cloning</title>
+  <title>🤗 Hugging Face Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-bubbles"></div>
+
+  <header class="app-header">
+    <h1>Zero‑Shot Voice Cloning</h1>
+    <p class="subtitle">Record or upload 5–10 seconds of speech, type text, and hear it back in the cloned voice.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Reference voice</h2>
+      <div class="audio-controls">
+        <button id="recordBtn" class="btn primary">● Record</button>
+        <button id="stopBtn" class="btn" disabled>■ Stop</button>
+        <input type="file" id="uploadInput" accept="audio/*" />
+      </div>
+      <audio id="referencePlayer" controls></audio>
+      <p class="hint">Tip: Use a clean sample—no music, one speaker, clear pronunciation.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Text & settings</h2>
+      <label class="field">
+        <span>Text to speak</span>
+        <textarea id="textInput" rows="3" placeholder="Type what you want the cloned voice to say..."></textarea>
+      </label>
+
+      <label class="field">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="en" selected>English (en)</option>
+          <option value="es">Spanish (es)</option>
+          <option value="fr">French (fr)</option>
+          <option value="de">German (de)</option>
+          <option value="it">Italian (it)</option>
+          <option value="pt">Portuguese (pt)</option>
+          <option value="pl">Polish (pl)</option>
+          <option value="tr">Turkish (tr)</option>
+          <option value="ru">Russian (ru)</option>
+          <option value="nl">Dutch (nl)</option>
+          <option value="cs">Czech (cs)</option>
+          <option value="ar">Arabic (ar)</option>
+          <option value="zh-cn">Chinese (zh-cn)</option>
+          <option value="ja">Japanese (ja)</option>
+          <option value="ko">Korean (ko)</option>
+          <option value="hi">Hindi (hi)</option>
+        </select>
+      </label>
+
+      <div class="sliders">
+        <div class="slider">
+          <label for="boostSlider">Speaker boost</label>
+          <input id="boostSlider" type="range" min="0" max="2" step="0.1" value="1.0" />
+          <span id="boostValue">1.0</span>
+        </div>
+        <div class="slider">
+          <label for="speedSlider">Speed</label>
+          <input id="speedSlider" type="range" min="0.5" max="1.5" step="0.05" value="1.0" />
+          <span id="speedValue">1.0</span>
+        </div>
+        <div class="slider">
+          <label for="tempSlider">Temperature</label>
+          <input id="tempSlider" type="range" min="0.1" max="1.0" step="0.05" value="0.7" />
+          <span id="tempValue">0.7</span>
+        </div>
+      </div>
+
+      <button id="generateBtn" class="btn accent">Clone & Generate</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Output</h2>
+      <audio id="outputPlayer" controls></audio>
+      <div class="actions">
+        <a id="downloadLink" class="btn" download="cloned_voice.wav">Download</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Educational demo. Clone voices only with consent.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
