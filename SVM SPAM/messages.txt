@@ -1,0 +1,83 @@
+NORMAL MESSAGE
+"Hey, are we still meeting for lunch today?"
+
+"Can you send me the report by tomorrow morning?"
+
+"Happy birthday! Hope you have a great day."
+
+"Don't forget the meeting at 3 PM."
+
+"Are you free this weekend to catch up?"
+
+"Please review the attached document and give feedback."
+
+"Thanks for helping me with the project!"
+
+"Let’s schedule a call to discuss the proposal."
+
+"Can you pick up some groceries on your way home?"
+
+"I’m running late, will be there in 10 minutes."
+
+"Did you watch the game last night?"
+
+"I’ll bring the documents to the office tomorrow."
+
+"Could you please send me the invoice?"
+
+"We need to reschedule the meeting to next week."
+
+"Thanks for your help in completing the task."
+
+"Looking forward to our trip next month."
+
+"Please confirm your availability for the call."
+
+"I will send the notes after the class ends."
+
+"Can you recommend a good restaurant nearby?"
+
+"Don’t forget to submit your assignment by Friday."
+
+
+
+SPAM MESSAGE
+"Congratulations! You won a free iPhone, click here to claim."
+
+"Claim your $500 gift card now, limited time offer!"
+
+"You have been selected for a cash prize, reply immediately."
+
+"Earn $1000 per day from home, no experience needed!"
+
+"Get cheap medications online without prescription."
+
+"Win a lottery! Provide your bank details to claim."
+
+"URGENT! Your account has been compromised, click this link."
+
+"Free entry to exclusive contest. Win big prizes!"
+
+"This is your last chance to claim your bonus reward!"
+
+"Hot singles in your area waiting to chat. Sign up now!"
+
+"Congratulations! You’ve been selected for a vacation package."
+
+"Get rich quick by investing in this one simple trick."
+
+"Limited offer: Buy one get one free today!"
+
+"Earn money online fast. No skills required!"
+
+"Your subscription has expired. Click to renew now."
+
+"Win free tickets to a concert! Click here!"
+
+"Exclusive offer: Claim your free prize now!"
+
+"You have won a free shopping voucher, act now."
+
+"Low interest loans available, apply immediately!"
+
+"Click here to get a free gift instantly."
