@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aino Nova — AI‑Native Language App</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="light">
+  <canvas id="bubbles"></canvas>
+
+  <header class="topbar">
+    <div class="brand"><span class="logo">✦</span><span class="title">Aino Nova</span></div>
+    <div class="actions">
+      <button id="toggleTheme" class="ghost">Light</button>
+      <button id="voiceToggle" class="ghost">🔊 Voice: Off</button>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </div>
+  </header>
+
+  <main id="app" class="app">
+    <aside class="sidebar">
+      <h3>Learning Guide</h3>
+      <div id="guide">
+        <p>Quickstart:</p>
+        <ol>
+          <li><code>printing("Hello World")</code></li>
+          <li><code>let x = 42</code></li>
+          <li><code>dataset "iris.csv" as iris</code></li>
+        </ol>
+      </div>
+      <button id="saveGuideBtn" class="secondary">Save Learning Guide (PDF)</button>
+    </aside>
+
+    <section class="workspace">
+      <div class="editor">
+        <div class="editor-header">
+          <h3>Editor</h3>
+          <div class="editor-actions">
+            <button id="runBtn" class="primary">Run</button>
+            <button id="clearBtn" class="ghost">Clear</button>
+            <button id="saveBtn" class="secondary">Save Code</button>
+            <button id="saveAllBtn" class="secondary">Save All</button>
+          </div>
+        </div>
+        <textarea id="code" spellcheck="false"></textarea>
+      </div>
+
+      <div class="shell">
+        <div class="shell-header">
+          <h3>Shell</h3>
+          <div class="shell-actions">
+            <input id="shellInput" type="text" placeholder='Type a command'/>
+            <button id="shellRun" class="secondary">Execute</button>
+            <button id="saveOutputBtn" class="secondary">Save Output</button>
+          </div>
+        </div>
+        <pre id="output" class="output"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
