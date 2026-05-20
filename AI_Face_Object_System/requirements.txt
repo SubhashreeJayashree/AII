@@ -1,0 +1,11 @@
+﻿opencv-python
+numpy
+tensorflow
+keras
+face_recognition
+flask
+flask-cors
+streamlit
+cmake
+dlib
+

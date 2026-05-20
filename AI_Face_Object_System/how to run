@@ -1,0 +1,6 @@
+pip cache purge
+pip install dlib
+python -m pip install --upgrade pip setuptools wheel
+pip install face-recognition
+conda install -c conda-forge dlib
+conda install -c conda-forge face-recognition
